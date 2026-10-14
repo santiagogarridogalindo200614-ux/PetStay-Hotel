@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>PetStay Hotel - Usuarios y mascotas</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>PetStay Hotel: usuarios y mascotas</h1>
+
+    <h2>Registrar usuario</h2>
+    <!-- action = url-pattern del servlet (sin "/"), igual que en web.xml.
+         method="get": los datos viajan en la URL y los recibe doGet().
+         Para probar doPost() basta cambiar method="get" por method="post". -->
+    <form name="FormUsuario" action="RegistroUsuario" method="get">
+        <p>Nombre: <input type="text" name="nombre" maxlength="50" required></p>
+        <p>Apellido: <input type="text" name="apellido" maxlength="50" required></p>
+        <p>Cédula: <input type="text" name="cedula" maxlength="20" required></p>
+        <p>Teléfono: <input type="tel" name="telefono" maxlength="20"></p>
+        <p>Correo electrónico: <input type="email" name="correo" maxlength="100"></p>
+        <p>Dirección: <input type="text" name="direccion" maxlength="150"></p>
+        <p><input type="submit" value="Registrar usuario"></p>
+    </form>
+
+    <hr>
+
+    <h2>Registrar mascota</h2>
+    <form name="FormMascota" action="RegistroMascota" method="get">
+        <p>Cédula del dueño: <input type="text" name="cedulaDueno" maxlength="20" required></p>
+        <p>Nombre de la mascota: <input type="text" name="nombre" maxlength="50" required></p>
+        <p>Especie: <input type="text" name="especie" maxlength="50" required></p>
+        <p>Raza: <input type="text" name="raza" maxlength="50"></p>
+        <p>Edad (años): <input type="number" name="edad" min="0" max="60" required></p>
+        <p>Peso (kg): <input type="number" name="peso" min="0" max="999.99" step="0.01" required></p>
+        <p>Observaciones:<br><textarea name="observaciones" rows="3" cols="40" maxlength="255"></textarea></p>
+        <p><input type="submit" value="Registrar mascota"></p>
+    </form>
+
+    <hr>
+
+    <p><a href="registrados.jsp">Ver usuarios y mascotas registrados</a></p>
+</body>
+</html>
